@@ -19,7 +19,7 @@ function Header() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/">Tous les CV</Link>
+                            <Link className="nav-link" to="/cv">Tous les CV</Link>
                         </li>
 
                         {user && <li className="nav-item">

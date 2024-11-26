@@ -1,11 +1,10 @@
-import { useState } from 'react'
+import { Route, Routes } from "react-router-dom"
 import Header from './Navigation/Header'
-import { Route, Routes } from "react-router-dom";
-import Login from "./Pages/Login";
-
+import Index from './Pages/Index'
+import Register from './Pages/Register'
+import Login from "./Pages/Login"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -13,14 +12,11 @@ function App() {
         <div className="row">
           <Header />
         </div>
-
         <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/register" eLement={<Register />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-
-
-
-        
       </div>
     </>
   )
