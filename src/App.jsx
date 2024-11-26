@@ -3,6 +3,7 @@ import Header from './Navigation/Header'
 import Index from './Pages/Index'
 import Register from './Pages/Register'
 import Login from "./Pages/Login"
+import Profile from "./Pages/User/Profile"
 
 function App() {
 
@@ -16,6 +17,10 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="/register" eLement={<Register />} />
           <Route path="/login" element={<Login />} />
+
+
+          <Route path={"/profile"} element={<Profile />} />
+
         </Routes>
       </div>
     </>
