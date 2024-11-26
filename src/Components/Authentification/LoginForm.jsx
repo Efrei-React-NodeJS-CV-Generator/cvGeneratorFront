@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import React, { useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
+import { getApiRoute } from '../../Utils/Route/ApiRoute';
 
 const LoginForm = () => {
     const navigate = useNavigate();
@@ -32,10 +33,11 @@ const LoginForm = () => {
                             login(data);
                             navigate("/", { replace: true });
                         } else {
-                            setFlashMessage("Nom de compte ou mot de passe incorrect.");
+                            // setFlashMessage("Nom de compte ou mot de passe incorrect.");
                         }
                     } catch (error) {
-                        setFlashMessage("Erreur : " + error.message);
+                        // setFlashMessage("Erreur : " + error.message);
+                        console.error(error);
                     }
                 }}
                 validationSchema={Yup.object({
@@ -48,12 +50,12 @@ const LoginForm = () => {
                         <div className="form-group">
                             <label htmlFor="login">Email :</label>
                             <Field className="form-control" type="email" name="email" />
-                            <ErrorMessage style={{ color: "red" }} name="email" component="div" />
+                            {/* <ErrorMessage style={{ color: "red" }} name="email" component="div" /> */}
                         </div>
                         <div className="form-group">
                             <label htmlFor="login">Mot de passe :</label>
                             <Field className="form-control" type="password" name="password" />
-                            <ErrorMessage style={{ color: "red" }} name="password" component="div" />
+                            {/* <ErrorMessage style={{ color: "red" }} name="password" component="div" /> */}
                         </div>
                         <button className="btn btn-primary mt-3" type="submit" disabled={isSubmitting}>
                             Connexion
@@ -67,3 +69,5 @@ const LoginForm = () => {
     )
 
 }
+
+export default LoginForm;
