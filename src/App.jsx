@@ -9,12 +9,13 @@ import ShowMyCv from "./Pages/Cv/ShowMyCv"
 import MyCvViewModeEnum from "./Enum/MyCvViewModeEnum"
 import ShowCv from "./Pages/Cv/ShowCv"
 import CvIndex from "./Pages/Cv/CvIndex"
+import '../public/Asset/Style/style.css';
 
 function App() {
 
   return (
     <>
-      <div className="container-fluid vh-100">
+      <div className="container-fluid vh-100 bg-dark">
         <div className="row">
           <Header />
         </div>

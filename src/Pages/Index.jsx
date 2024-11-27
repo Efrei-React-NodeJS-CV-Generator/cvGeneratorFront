@@ -5,10 +5,11 @@ function Index() {
   const navigate = useNavigate()
 
   return (
-    <div className="container d-flex justify-content-center p-4">
+    <div className="container d-flex justify-content-center align-items-center p-4">
       <div className="d-flex flex-column justify-content-center">
-        <h2 className="p-4">Bienvenue sur CV Generator</h2>
-        <div className="d-flex flex-row justify-content-center">
+        <h2 className="p-4 text-light text-center">Bienvenue sur CV Generator</h2>
+        <h3 className="p-4 text-light text-center">Crée et partager votre cv au monde entier !! </h3>
+        <div className="d-flex flex-row gap-3 justify-content-center">
           <Button variant="contained" onClick={() => navigate("/register")}>
             Créer mon CV
           </Button>

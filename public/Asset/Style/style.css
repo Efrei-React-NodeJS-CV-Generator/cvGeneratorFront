@@ -1,0 +1,32 @@
+.form-login{
+    margin-top: 12rem;
+    border-radius: 10px;
+
+}
+
+.card-profil, .card-body{
+    box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.7),
+    0 0 12px rgba(255, 255, 255, 0.2),
+    0 0 4px rgba(255, 255, 255, 0.4);
+}
+
+.nav-link {
+    position: relative; /* Nécessaire pour le positionnement de ::after */
+    text-decoration: none; /* Supprime le sous-lignement par défaut */
+  }
+
+.nav-link::after{
+    content: ''; /* Nécessaire pour créer l'élément virtuel */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: #1565c0; /* Couleur de la ligne */
+    transition: width 0.4s ease; /* Animation progressive */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* La ligne s'étend sur toute la largeur */
+  }
