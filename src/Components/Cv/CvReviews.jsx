@@ -19,7 +19,7 @@ function CvReviews({ cvId, cvReviews }) {
     const handleReviewSubmit = (event) => {
         event.preventDefault();
 
-        fetch(getApiRoute(`/review/${cvId}`), {
+        fetch(getApiRoute(`Avis/${cvId}`), {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -56,7 +56,7 @@ function CvReviews({ cvId, cvReviews }) {
                         <h6>
                             Envoyé par{" "}
                             <strong>
-                                {review.user.firstname} {review.user.lastname}
+                                {review.user.prenom} {review.user.nom}
                             </strong>
                         </h6>
                         {review.comment}

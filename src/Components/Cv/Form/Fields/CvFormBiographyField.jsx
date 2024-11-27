@@ -4,8 +4,8 @@ function CvFormBiographyField() {
     return (
         <div className="form-group">
             <label htmlFor="biography">Biographie :</label>
-            <Field className="form-control" type="text" name="biography" />
-            <ErrorMessage style={{ color: "red" }} name="biography" component="div" />
+            <Field className="form-control" type="text" name="presentation" />
+            <ErrorMessage style={{ color: "red" }} name="presentation" component="div" />
         </div>
     );
 }
