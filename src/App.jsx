@@ -4,6 +4,7 @@ import Index from './Pages/Index'
 import Register from './Pages/Register'
 import Login from "./Pages/Login"
 import Profile from "./Pages/User/Profile"
+import EditProfile from "./Pages/User/EditProfile"
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
 
 
           <Route path={"/profile"} element={<Profile />} />
+          <Route path={"/profile/edit"} element={<EditProfile />} />
+
 
         </Routes>
       </div>

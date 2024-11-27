@@ -2,6 +2,8 @@ import { GetAuthenticatedUserId, GetAuthenticatedUserToken} from "../../../Utils
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { getApiRoute } from "../../../Utils/Route/ApiRoute";
+import ProfileShow from "./DisplayMode/ProfileShow";
+import ProfileEdit from "./DisplayMode/ProfileEdit";
 
 
 
@@ -26,7 +28,7 @@ const UserProfile = ({ isEditMode }) => {
                 return response.json();
             })
             .then((data) => {
-                // setUserData(data);
+                setUserData(data);
                 // setLoading(false);
             })
             .catch(() => {
@@ -41,8 +43,7 @@ const UserProfile = ({ isEditMode }) => {
 
     return (
         <div className="container mt-5">
-            {userId}
-            {/* <h1 className="mb-4">{isEditMode ? "Modifier son profil" : "Page de profil"}</h1>
+            { <h1 className="mb-4">{isEditMode ? "Modifier son profil" : "Page de profil"}</h1> }
             {userData && (
                 <div className="card">
                     <div className="card-body">
@@ -50,7 +51,7 @@ const UserProfile = ({ isEditMode }) => {
                         {isEditMode ? <ProfileEdit userData={userData} userId={userId} userToken={userToken} /> : <ProfileShow userData={userData} />}
                     </div>
                 </div>
-            )} */}
+            )}
         </div>
     );
 };
