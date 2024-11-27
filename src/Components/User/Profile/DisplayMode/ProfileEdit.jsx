@@ -57,28 +57,28 @@ const ProfileEdit = ({ userData, userId, userToken }) => {
                         <div className="form-group">
                             <label htmlFor="email">Email :</label>
                             <Field className="form-control" type="email" name="email" />
-                            {/* <ErrorMessage style={{ color: "red" }} name="email" component="div" /> */}
+                            <ErrorMessage style={{ color: "red" }} name="email" component="div" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="name">Nom :</label>
                             <Field className="form-control" type="nom" name="nom" />
-                            {/* <ErrorMessage style={{ color: "red" }} name="lastname" component="div" /> */}
+                            <ErrorMessage style={{ color: "red" }} name="nom" component="div" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="name">Prénom :</label>
                             <Field className="form-control" type="prenom" name="prenom" />
-                            {/* <ErrorMessage style={{ color: "red" }} name="firstname" component="div" /> */}
+                            <ErrorMessage style={{ color: "red" }} name="prenom" component="div" />
                         </div>
 
                         <div className="form-group mt-5">
                             <label htmlFor="password">Changer de mot de passe :</label>
                             <Field className="form-control" type="password" name="password" />
-                            {/* <ErrorMessage style={{ color: "red" }} name="password" component="div" /> */}
+                            <ErrorMessage style={{ color: "red" }} name="password" component="div" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="confirPassword">Confirmez le mot de passe :</label>
                             <Field className="form-control" type="password" name="confirmPassword" />
-                            {/* <ErrorMessage style={{ color: "red" }} name="confirmPassword" component="div" /> */}
+                            <ErrorMessage style={{ color: "red" }} name="confirmPassword" component="div" />
                         </div>
                         <div className="mt-3">
                             <button className="btn btn-primary" type="submit" disabled={isSubmitting}>
