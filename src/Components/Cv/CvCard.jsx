@@ -7,7 +7,7 @@ function CvCard({ cvData }) {
             <div className="card">
                 <div className="card-body">
                     <h5 className="card-title mb-3">
-                        {cvData.user.prenom} {cvData.user.nom}
+                        {cvData.user.firstname} {cvData.user.lastname}
                     </h5>
                     <p>{cvData.titre}</p>
                 </div>
