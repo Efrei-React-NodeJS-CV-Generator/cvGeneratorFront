@@ -53,7 +53,7 @@ const ProfileEdit = ({ userData, userId, userToken }) => {
                 })}
             >
                 {({ isSubmitting }) => (
-                    <Form>
+                    <Form className="d-flex flex-column gap-3">
                         <div className="form-group">
                             <label htmlFor="email">Email :</label>
                             <Field className="form-control" type="email" name="email" />
@@ -69,8 +69,7 @@ const ProfileEdit = ({ userData, userId, userToken }) => {
                             <Field className="form-control" type="prenom" name="prenom" />
                             <ErrorMessage style={{ color: "red" }} name="prenom" component="div" />
                         </div>
-
-                        <div className="form-group mt-5">
+                        <div className="form-group">
                             <label htmlFor="password">Changer de mot de passe :</label>
                             <Field className="form-control" type="password" name="password" />
                             <ErrorMessage style={{ color: "red" }} name="password" component="div" />
