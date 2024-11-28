@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <div className="container-fluid vh-100 bg-dark">
+      <div className="container-fluid vh-100">
         <div className="row">
           <Header />
         </div>
