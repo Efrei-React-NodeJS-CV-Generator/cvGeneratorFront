@@ -1,5 +1,5 @@
 export const getApiRoute = (endpoint) => {
-    return `${getApiUrl()}/api/${endpoint}`;
+    return `${getApiUrl()}api/${endpoint}`;
 }
 
 const getApiUrl = () => {
