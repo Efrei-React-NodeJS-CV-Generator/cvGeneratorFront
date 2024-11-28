@@ -36,13 +36,13 @@ function CvForm({ userToken, mode, cvData = null }) {
         <>
             <Formik
                 initialValues={{
-                    title: cvData ? cvData.title : "",
-                    biography: cvData ? cvData.biography : "",
+                    titre: cvData ? cvData.titre : "",
+                    presentation: cvData ? cvData.presentation : "",
                     telephone: cvData ? cvData.telephone : "",
                     linkedin: cvData ? cvData.linkedin : "",
                     skills: cvData ? cvData.skills : [""],
                     softSkills: cvData ? cvData.softSkills : [""],
-                    language: cvData ? cvData.language : [""],
+                    langage: cvData ? cvData.langage : [""],
                     education: cvData ? cvData.education : [{ school: "", formation: "", description: "", startDate: "", endDate: "" }],
                     experience: cvData ? cvData.experience : [{ compagny: "", position: "", startDate: "", endDate: "" }],
                     private: cvData ? cvData.private : false,
@@ -66,13 +66,13 @@ function CvForm({ userToken, mode, cvData = null }) {
                     }
                 }}
                 validationSchema={Yup.object({
-                    title: Yup.string().required("Requis"),
-                    biography: Yup.string().required("Requis"),
+                    titre: Yup.string().required("Requis"),
+                    presentation: Yup.string().required("Requis"),
                     telephone: Yup.string().required("Requis"),
                     linkedin: Yup.string(),
                     skills: Yup.array().of(Yup.string().required("Requis")),
                     softSkills: Yup.array().of(Yup.string().required("Requis")),
-                    language: Yup.array().of(Yup.string().required("Requis")),
+                    langage: Yup.array().of(Yup.string().required("Requis")),
                     education: Yup.array().of(
                         Yup.object().shape({
                             school: Yup.string().required("Requis"),

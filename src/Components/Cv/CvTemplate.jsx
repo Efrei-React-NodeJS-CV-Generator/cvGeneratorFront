@@ -12,7 +12,7 @@ function CvTemplate({ cv }) {
                     <div className="col-3 bg-lightblue p-4">
                         <div>
                             <h5 className="fw-bold">Contact</h5>
-                            {userData.firstname} {userData.lastname}
+                            {userData.prenom} {userData.nom}
                             <br />
                             Email : {userData.email}
                             <br />
@@ -26,13 +26,13 @@ function CvTemplate({ cv }) {
                         <hr />
                         <div>
                             <h5 className="fw-bold">Qui suis-je ?</h5>
-                            {cv.biography}
+                            {cv.presentation}
                         </div>
                         <hr />
                         <div>
                             <h5 className="fw-bold">Langues parlées</h5>
                             <ul className="list-unstyled">
-                                {cv.language.map((lang, index) => (
+                                {cv.langage.map((lang, index) => (
                                     <li key={index}>- {lang}</li>
                                 ))}
                             </ul>
@@ -51,7 +51,7 @@ function CvTemplate({ cv }) {
                     <div className="col-9">
                         <div className="row bg-warning bg-dark-subtle">
                             <div className="text-center mt-4 center pb-3">
-                                <h1>{cv.title}</h1>
+                                <h1>{cv.titre}</h1>
                             </div>
                         </div>
                         <div className="row pt-4 ps-5 pe-5 pb-3">
@@ -98,7 +98,7 @@ function CvTemplate({ cv }) {
                     </div>
                 </div>
             </div>
-            <CvReviews cvId={cv._id} cvReviews={cv.review} />
+            <CvReviews cvId={cv._id} cvReviews={cv.Avis} />
         </>
     );
 }

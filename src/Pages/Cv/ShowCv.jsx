@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getApiRoute } from "../../Utils/Route/ApiRoute.js";
 import CvTemplate from "../../Components/Cv/CvTemplate.jsx";
+import LoaderSpinner from "../../Components/Misc/LoaderSpinner.jsx";
 
 function ShowCv() {
     const { cvId } = useParams();
@@ -27,9 +28,14 @@ function ShowCv() {
             });
     }, [cvId]);
 
+    if (loading) {
+        return <LoaderSpinner />;
+    }
+
     if (error) {
         
     }
+
 
     return <CvTemplate cv={cvData} />;
 }

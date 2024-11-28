@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function CvCard({ cvData }) {
     return (
-        <Link to={`/cv/${cvData.id}`} className="text-decoration-none hover">
+        <Link to={`/cv/${cvData.cvId}`} className="text-decoration-none hover">
             <div className="card">
                 <div className="card-body">
                     <h5 className="card-title mb-3">

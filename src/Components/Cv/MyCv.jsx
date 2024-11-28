@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import ManageMyCv from "./MyCvDisplayMode/ManageMyCv.jsx";
 import CvTemplate from "./CvTemplate.jsx";
 import { deleteCv } from "../../Utils/Cv/CvManager.js";
+import LoaderSpinner from "../Misc/LoaderSpinner.jsx";
 
 const MyCv = ({ mode }) => {
     const userId = GetAuthenticatedUserId();
@@ -24,20 +25,24 @@ const MyCv = ({ mode }) => {
         })
             .then((response) => {
                 if (!response.ok) {
-                    // setError("Une erreur est survenue lors de la récupération des informations");
-                    // setLoading(false);
+                    setError("Une erreur est survenue lors de la récupération des informations");
+                    setLoading(false);
                 }
                 return response.json();
             })
             .then((data) => {
                 setUserData(data);
-                // setLoading(false);
+                setLoading(false);
             })
             .catch(() => {
-                // setError("Une erreur critique est survenue lors de la récupération des informations");
-                // setLoading(false);
+                setError("Une erreur critique est survenue lors de la récupération des informations");
+                setLoading(false);
             });
     }, [userId, userToken]);
+
+    if (loading) {
+        return <LoaderSpinner />;
+    }
 
     if (error) {
        

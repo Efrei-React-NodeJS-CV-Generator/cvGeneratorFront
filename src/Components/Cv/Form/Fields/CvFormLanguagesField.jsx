@@ -7,12 +7,12 @@ function CvFormLanguagesField({ values }) {
             {({ push, remove }) => (
                 <div>
                     <h4>Langues</h4>
-                    {values.language.map((_, index) => (
+                    {values.langage.map((_, index) => (
                         <div key={index}>
                             <div className="form-group">
                                 <label htmlFor={`language.${index}`}>Langue {index + 1} :</label>
-                                <Field className="form-control" type="text" name={`language.${index}`} />
-                                <ErrorMessage style={{ color: "red" }} name={`language.${index}`} component="div" />
+                                <Field className="form-control" type="text" name={`langage.${index}`} />
+                                <ErrorMessage style={{ color: "red" }} name={`langage.${index}`} component="div" />
                             </div>
                             <button type="button" className="btn btn-warning mt-2" onClick={() => remove(index)}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash-fill" viewBox="0 0 16 16">
