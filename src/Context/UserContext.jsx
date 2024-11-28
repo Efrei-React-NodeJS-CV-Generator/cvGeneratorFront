@@ -23,7 +23,6 @@ const UserProvider = ({ children }) => {
             setUser(JSON.parse(storedUser));
         }
     }, []);
-
     const login = (loginInfos) => {
         setUser(loginInfos);
         localStorage.setItem('user', JSON.stringify(loginInfos));
@@ -34,6 +33,10 @@ const UserProvider = ({ children }) => {
         localStorage.removeItem('user');
         window.location.href = '/';
     }
+
+    const register = (registerInfos) => {
+        console.log("Nouvel utilisateur enregistré : ", registerInfos);
+    };
 
     const getUserInfos = () => {
         if (user) {
@@ -47,7 +50,7 @@ const UserProvider = ({ children }) => {
         }
     };
 
-    return <UserContext.Provider value={{ login, getUserInfos, logout }}>{children}</UserContext.Provider>;
+    return <UserContext.Provider value={{ login, getUserInfos, logout, register }}>{children}</UserContext.Provider>;
 
 };
 
