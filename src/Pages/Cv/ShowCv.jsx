@@ -36,7 +36,6 @@ function ShowCv() {
         
     }
 
-    console.log(cvData);
 
     return <CvTemplate cv={cvData} />;
 }

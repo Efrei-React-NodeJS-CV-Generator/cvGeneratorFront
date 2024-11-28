@@ -36,8 +36,6 @@ function CvIndex() {
     if (error) {
         
     }
- 
-    console.log(publicCvs);
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
