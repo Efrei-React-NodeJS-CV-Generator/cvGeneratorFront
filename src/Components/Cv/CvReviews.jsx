@@ -47,7 +47,7 @@ function CvReviews({ cvId, cvReviews }) {
     };
 
     return (
-        <div className="container mb-4">
+        <div className="container pb-4 text-white">
             <h2 className="mb-3">Commentaires</h2>
             {/* {error && <FlashMessage message={error} />} */}
             <div className="reviews-list">
@@ -64,7 +64,7 @@ function CvReviews({ cvId, cvReviews }) {
                 ))}
             </div>
             {isAuthenticated && (
-                <form onSubmit={handleReviewSubmit} className="review-form mt-3">
+                <form onSubmit={handleReviewSubmit} className="review-for mt-3">
                     <div className="mb-3">
                         <label htmlFor="review" className="form-label">
                             Ajouter un commentaire

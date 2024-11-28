@@ -1,5 +1,9 @@
+body {
+    background-color: #212529;
+}
+
 .form-login{
-    margin-top: 12rem;
+    margin-top: 6rem;
     border-radius: 10px;
 
 }

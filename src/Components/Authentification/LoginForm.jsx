@@ -1,6 +1,7 @@
 import{ ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
 import React, { useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
@@ -48,20 +49,20 @@ const LoginForm = () => {
             >
                 {({ isSubmitting }) => (
                     <Form>
-                        <div className="form-group mb-4">
+                        <div className="form-group mb-3">
                             <label htmlFor="login">Email :</label>
-                            <Field className="form-control" type="email" name="email" placeholder="renseigner votre email" required/>
+                            <Field className="form-control" type="email" name="email" placeholder="Email" required/>
                             {/* <ErrorMessage style={{ color: "red" }} name="email" component="div" /> */}
                         </div>
-                        <div className="form-group">
+                        <div className="form-group mb-3">
                             <label htmlFor="login">Mot de passe :</label>
-                            <Field className="form-control" type="password" name="password" placeholder="renseigner votre mot de passe" required/>
+                            <Field className="form-control" type="password" name="password" placeholder="Mot de passe" required/>
                             {/* <ErrorMessage style={{ color: "red" }} name="password" component="div" /> */}
                         </div>
-                        <div className=" d-flex flex-column gap-3 align-items-center text-center mt-3">
-                            <button className="btn btn-primary" type="submit" disabled={isSubmitting}>
+                        <div className=" d-flex flex-column gap-3 align-items-center text-center">
+                            <Button variant="contained" type="submit" disabled={isSubmitting}>
                                 Connexion
-                            </button>
+                            </Button>
                             <p className='mb-0'>
                                 Pas de compte ? Pas de problème ! <Link to="/register">Inscrivez-vous maintenant !</Link>
                             </p>

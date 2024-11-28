@@ -9,7 +9,7 @@ function CvTemplate({ cv }) {
         <>
             <div className="container mt-5 mb-5 border border-2 shadow">
                 <div className="row">
-                    <div className="col-3 bg-lightblue p-4">
+                    <div className="col-3 p-4 bg-lightblue text-white">
                         <div>
                             <h5 className="fw-bold">Contact</h5>
                             {userData.prenom} {userData.nom}
@@ -54,7 +54,7 @@ function CvTemplate({ cv }) {
                                 <h1>{cv.titre}</h1>
                             </div>
                         </div>
-                        <div className="row pt-4 ps-5 pe-5 pb-3">
+                        <div className="row pt-4 ps-5 pe-5 pb-3 text-white">
                             <div>
                                 <h4 className="fw-bold">Experiences professionnelles</h4>
                                 {cv.experience.map((exp, index) => (

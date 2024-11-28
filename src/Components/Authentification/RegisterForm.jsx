@@ -1,5 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
+import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
@@ -48,30 +50,35 @@ const RegisterForm = () => {
         })}
       >
         {({ isSubmitting }) => (
-          <Form className="gap-4">
-            <div className="form-group">
+          <Form>
+            <div className="form-group mb-3">
               <label htmlFor="register">Nom :</label>
-              <Field className="form-control" type="text" name="nom" />
+              <Field className="form-control" type="text" name="nom" placeholder="Nom" required />
               {/* <ErrorMessage style={{ color: "red" }} name="nom" component="div" /> */}
             </div>
-            <div className="form-group">
+            <div className="form-group mb-3">
               <label htmlFor="register">Prénom :</label>
-              <Field className="form-control" type="text" name="prenom" />
+              <Field className="form-control" type="text" name="prenom" placeholder="Prénom" required />
               {/* <ErrorMessage style={{ color: "red" }} name="prenom" component="div" /> */}
             </div>
-            <div className="form-group">
+            <div className="form-group mb-3">
               <label htmlFor="register">Email :</label>
-              <Field className="form-control" type="email" name="email" />
+              <Field className="form-control" type="email" name="email" placeholder="Email" required />
               {/* <ErrorMessage style={{ color: "red" }} name="email" component="div" /> */}
             </div>
-            <div className="form-group">
+            <div className="form-group mb-3">
               <label htmlFor="register">Mot de passe :</label>
-              <Field className="form-control" type="password" name="password" />
+              <Field className="form-control" type="password" name="password" placeholder="Mot de passe" required />
               {/* <ErrorMessage style={{ color: "red" }} name="password" component="div" /> */}
             </div>
-            <button className="btn btn-primary mt-3" type="submit" disabled={isSubmitting}>
-              Connexion
-            </button>
+            <div className=" d-flex flex-column gap-3 align-items-center text-center mt-3">
+              <Button variant="contained" type="submit" disabled={isSubmitting}>
+                Inscription
+              </Button>
+              <p className='mb-0'>
+                Déjà un compte ? Pas de problème ! <Link to="/register">Connectez-vous maintenant !</Link>
+              </p>
+            </div>
           </Form>
         )}
       </Formik>
