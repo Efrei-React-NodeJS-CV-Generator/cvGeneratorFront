@@ -1,8 +1,59 @@
-# React + Vite
+# 🎨 **Frontend - Générateur de CV**  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ce dépôt contient la partie **frontend** du projet **Générateur de CV**. L'application est construite avec **React** et utilise **Vite** comme outil de build.  
 
-Currently, two official plugins are available:
+## 🚀 **Installation et Lancement**  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **Prérequis :**  
+- Node.js installé.  
+
+### **Étapes d'installation :**  
+
+1. Clonez le dépôt :  
+   ```bash
+   git clone https://github.com/username/cv-generator-frontend.git
+   cd cv-generator-frontend
+   ```
+
+2. Installez les dépendances :  
+   ```bash
+   npm install
+   ```
+
+3. Démarrez l'application :  
+   ```bash
+   npm run dev
+   ```
+
+### 🌱 **Variables d'environnement**  
+
+Créez un fichier `.env` à la racine du projet avec les clés suivantes :  
+
+```env
+VITE_API_BASE_URL="http://localhost:3000"  # URL de l'API backend
+```
+
+## 📂 **Structure du projet**  
+
+La structure est la suivante :  
+
+```plaintext
+src/
+├── assets/         
+├── components/     
+├── Context/        
+├── Control/        
+├── Enum/           
+├── Navigation/     
+├── pages/          
+├── statutCV/       
+├── utils/          
+├── App.jsx         
+└── main.jsx        
+```
+
+## ✨ **Scripts utiles**  
+
+- `npm run dev` : Démarrer l'application en mode développement.  
+- `npm run build` : Construire l'application pour la production.  
+- `npm run preview` : Prévisualiser la build en local.  
