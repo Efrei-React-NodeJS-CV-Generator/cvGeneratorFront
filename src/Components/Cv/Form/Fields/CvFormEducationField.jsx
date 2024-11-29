@@ -21,6 +21,11 @@ function CvFormEducationField({ values }) {
                                 <ErrorMessage style={{ color: "red" }} name={`education.${index}.formation`} component="div" />
                             </div>
                             <div className="form-group">
+                                <label htmlFor={`education.${index}.level`}>Niveau :</label>
+                                <Field className="form-control" type="text" name={`education.${index}.level`} />
+                                <ErrorMessage style={{ color: "red" }} name={`education.${index}.level`} component="div" />
+                            </div>
+                            <div className="form-group">
                                 <label htmlFor={`education.${index}.description`}>Description :</label>
                                 <Field className="form-control" type="text" name={`education.${index}.description`} />
                                 <ErrorMessage style={{ color: "red" }} name={`education.${index}.description`} component="div" />

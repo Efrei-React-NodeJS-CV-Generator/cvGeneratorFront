@@ -20,6 +20,7 @@ function CvForm({ userToken, mode, cvData = null }) {
     const navigate = useNavigate();
     let endpoint;
     let requestMethod;
+
     if (cvData && mode === MyCvViewModeEnum.EDIT) {
         endpoint = getApiRoute(`cv/update/${cvData._id}`);
         requestMethod = "PATCH";
@@ -29,8 +30,12 @@ function CvForm({ userToken, mode, cvData = null }) {
     }
 
     if (!endpoint || !requestMethod) {
+        console.error("Endpoint or request method is undefined");
         return null;
     }
+
+    console.log("Using endpoint:", endpoint);
+    console.log("Request method:", requestMethod);
 
     return (
         <>
@@ -43,11 +48,13 @@ function CvForm({ userToken, mode, cvData = null }) {
                     skills: cvData ? cvData.skills : [""],
                     softSkills: cvData ? cvData.softSkills : [""],
                     langage: cvData ? cvData.langage : [""],
-                    education: cvData ? cvData.education : [{ school: "", formation: "", description: "", startDate: "", endDate: "" }],
+                    education: cvData ? cvData.education : [{ school: "", formation: "", level: "", description: "", startDate: "", endDate: "" }],
                     experience: cvData ? cvData.experience : [{ compagny: "", position: "", startDate: "", endDate: "" }],
                     private: cvData ? cvData.private : false,
                 }}
                 onSubmit={async (values) => {
+                    console.log("Form submitted with values:", values);
+                    console.log("Request body:", JSON.stringify(values, null, 2));
                     try {
                         const response = await fetch(endpoint, {
                             method: requestMethod,
@@ -58,18 +65,27 @@ function CvForm({ userToken, mode, cvData = null }) {
                             body: JSON.stringify(values),
                         });
 
+                        console.log("Response received:", response);
+
                         if (response.ok) {
+                            console.log("Submission successful, navigating to home");
                             navigate("/");
                         } else {
+                            console.error("Submission failed with status:", response.status);
                         }
                     } catch (error) {
+                        console.error("Error during submission:", error);
                     }
                 }}
                 validationSchema={Yup.object({
                     titre: Yup.string().required("Requis"),
                     presentation: Yup.string().required("Requis"),
                     telephone: Yup.string().required("Requis"),
-                    linkedin: Yup.string(),
+                    linkedin: Yup.string()
+                    .matches(
+                        /^https?:\/\/(www\.)?linkedin\.com\/.*$/,
+                        "Le lien LinkedIn doit être une URL valide commençant par 'https://www.linkedin.com/'"
+                    ),
                     skills: Yup.array().of(Yup.string().required("Requis")),
                     softSkills: Yup.array().of(Yup.string().required("Requis")),
                     langage: Yup.array().of(Yup.string().required("Requis")),
@@ -77,6 +93,7 @@ function CvForm({ userToken, mode, cvData = null }) {
                         Yup.object().shape({
                             school: Yup.string().required("Requis"),
                             formation: Yup.string().required("Requis"),
+                            level: Yup.string().required("Requis"),
                             description: Yup.string(),
                             startDate: Yup.number().required("Requis"),
                             endDate: Yup.number().required("Requis"),

@@ -81,6 +81,9 @@ function CvTemplate({ cv }) {
                                         <span>
                                             <strong>{edu.school}</strong> - {edu.formation}
                                         </span>
+                                        <span>
+                                            <strong>{edu.level}</strong>
+                                        </span>
                                         <p>{edu.description}</p>
                                     </div>
                                 ))}
