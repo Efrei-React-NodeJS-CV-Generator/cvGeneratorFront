@@ -21,6 +21,7 @@ const LoginForm = () => {
                     password: "",
                 }}
                 onSubmit={async (values) => {
+                    console.log("Request body:", JSON.stringify(values, null, 2));
                     try {
                         const response = await fetch(getApiRoute(`auth/login`), {
                             method: "POST",
